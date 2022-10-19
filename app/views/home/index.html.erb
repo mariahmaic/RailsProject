@@ -7,3 +7,5 @@
     <li><%= link_to name.name %></li>
   <%end %>
 </div>
+
+<%= will_paginate @names, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
