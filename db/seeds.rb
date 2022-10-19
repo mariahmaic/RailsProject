@@ -14,3 +14,10 @@ require "faker"
   )
   names.save
 end
+
+100.times do
+  educators = Educator.create(
+    university: Faker::Educator.university,
+    coursename: Faker::Educator.course_name
+  )
+end
