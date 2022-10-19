@@ -56,6 +56,11 @@ class NamesController < ApplicationController
       format.html { redirect_to names_url, notice: "Name was successfully destroyed." }
       format.json { head :no_content }
     end
+
+    def search
+      wildcard_search = "%#{params[:keywords]}%"
+      @names = Name.where("name LIKE ?", wildcard_search)
+    end
   end
 
   private
