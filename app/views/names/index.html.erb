@@ -2,6 +2,8 @@
 
 <h1>Names</h1>
 
+<%= link_to "New name", new_name_path %>
+
 <div id="names">
   <% @names.each do |name| %>
     <%= render name %>
@@ -11,4 +13,4 @@
   <% end %>
 </div>
 
-<%= link_to "New name", new_name_path %>
+<%= will_paginate @names, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>

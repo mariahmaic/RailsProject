@@ -3,7 +3,8 @@ class NamesController < ApplicationController
 
   # GET /names or /names.json
   def index
-    @names = Name.all
+    # @names = Name.all
+    @names = Name.all.paginate(page: params[:page], per_page: 30)
   end
 
   # GET /names/1 or /names/1.json
