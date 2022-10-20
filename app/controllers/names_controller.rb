@@ -5,10 +5,15 @@ class NamesController < ApplicationController
   def index
     # @names = Name.all
     @names = Name.all.paginate(page: params[:page], per_page: 30)
+    if params[:search]
+      @search_term = params[:search]
+      @names = @names.search_by(@search_term)
+    end
   end
 
   # GET /names/1 or /names/1.json
   def show
+    @name = Name.find(params[:id])
   end
 
   # GET /names/new

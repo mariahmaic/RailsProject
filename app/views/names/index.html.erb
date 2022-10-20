@@ -1,14 +1,18 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Names</h1>
+<h1>Students</h1>
 
-<%= link_to "New name", new_name_path %>
+<%= form_for "", url: names_path, role: "search", method: :get do %>
+  <%= text_field_tag :search, @search_term,placeholder: "Search..." %>
+<% end %>
+
+<%= link_to "New Student", new_name_path %>
 
 <div id="names">
   <% @names.each do |name| %>
     <%= render name %>
     <p>
-      <%= link_to "Show this name", name %>
+      <%= link_to "Show Student Information", name %>
     </p>
   <% end %>
 </div>
