@@ -1,6 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Educators</h1>
+<h1>University and Courses</h1>
+<%= link_to "New educator", new_educator_path %>
+
+<%= form_for "", url: educators_path, role: "search", method: :get do %>
+  <%= text_field_tag :searchresult, @search_word,placeholder: "Search..." %>
+<% end %>
 
 <div id="educators">
   <% @educators.each do |educator| %>
@@ -11,4 +16,4 @@
   <% end %>
 </div>
 
-<%= link_to "New educator", new_educator_path %>
+<%= will_paginate @educators, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>

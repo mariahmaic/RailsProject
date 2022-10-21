@@ -3,7 +3,11 @@ class EducatorsController < ApplicationController
 
   # GET /educators or /educators.json
   def index
-    @educators = Educator.all
+    if params[:searchresult]
+      @search_word = params[:searchresult]
+      @educators = @educators.search_by(@search_term)
+    end
+    @educators = Educator.paginate(page: params[:page], per_page: 30)
   end
 
   # GET /educators/1 or /educators/1.json
