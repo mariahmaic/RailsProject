@@ -22,3 +22,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+![Rails Project (1)](https://user-images.githubusercontent.com/82932526/197119624-38c11dc8-cea2-48cb-bba4-91ca586ee498.jpg)
